@@ -54,7 +54,7 @@ If you want to implement KGARevion with a new KG. You are kindly requested to fi
 ```bash
 {{"input": [head_entity, tail_entity, rel, label], "embedding_ids:" [head_entity_id, tail_entity_id, rel_id]} ... }
 ```
-
+such as {"input": ["TSC22D3", "HPCAL4", "protein_protein", "True"], "embedding_ids": [792, 0, 10281]}
 
 ## ⚖️ License
 
