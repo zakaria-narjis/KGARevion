@@ -16,7 +16,7 @@ $ git clone https://github.com/mims-harvard/KGARevion
 $ cd KGARevion
 ```
 
-2⃣️ Then, set up the environment. This codebase leverages Python, Pytorch, Pytorch Geometric, etc. To create an environment with all of the required packages, please ensure that conda is installed and then execute the commands:
+2⃣️ Then, set up the environment. To create an environment with all of the required packages, please ensure that conda is installed and then execute the commands:
 
 ```bash
 $ conda env create -f KGARevion.yaml
