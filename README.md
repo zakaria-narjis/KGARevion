@@ -22,24 +22,32 @@ $ cd KGARevion
 $ conda env create -f KGARevion.yaml
 $ conda activate KGARevion
 ```
+## 💡 Running
 
-### 🛠️ Fine-tuning LLMs
+After cloning the repository and installing all dependencies. Please run KGARevion by the following command:
+
+```bash
+$ python KGARevion.py --dataset MedDDx --max_round 2 --is_revise True --llm_name llama3.1
+```
+\\ The 
+
+## 🛠️ Fine-tuning LLMs
 
 After cloning the repository and installing all dependencies. You can run the following command to train our model:
 
 
-### 🏙️ Figure 
+## 🏙️ Figure 
 
 To recover each figure presented in this paper, please download the code and data at [Fig.zip(google drive)](https://drive.google.com/file/d/1sCM8xh9tdyhAU0fHUPiyVbJwQeKvBwu2/view?usp=sharing) or [Fig.zip (zenodo)](https://zenodo.org/records/11554803). You could find all code and initial data in this folder to recover each figure. By the way, some figures are painted by GraphPad, so we also uploaded the initial file of GraphPad. 
 
 You can also access these figures in this repo by clicking 'Fig' and run notebooks to get them.
 
-### 🌟 Personalize based on your own dataset
+## 🌟 Personalize based on your own dataset
 
 If you want to benchmark KGARevion with your own QA dataset. You are kindly requested to prepare the following fil
 
 
-### ⚖️ License
+## ⚖️ License
 
 The code in this package is licensed under the MIT License.
 
