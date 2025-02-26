@@ -43,12 +43,17 @@ In the Review action, KGARevion is implemented by the LLM which is fune-tuned on
 
 ### QA Dataset
 
-If you want to benchmark KGARevion with your own QA dataset. You are kindly requested to prepare the json file as shown in our datasets folder. Then please benchmark KGARevion on your own QA dataset by:
+If you want to benchmark KGARevion on your own QA dataset. You are kindly requested to prepare the json file as shown in our datasets folder. Then please benchmark KGARevion on your own QA dataset by:
 ```bash
 $ python KGARevion.py --dataset [Your own dataset]
 ```
 
 ### KG Dataset
+
+If you want to implement KGARevion with a new KG. You are kindly requested to finetune the LLM with new KG and then integrate the finetuned LLM as the backbone model of the Review action of KGARevion. To achieve that, please first prepare your KG as following:
+```bash
+{{"input": [head_entity, tail_entity, rel, label], "embedding_ids:" [head_entity_id, tail_entity_id, rel_id]} ... }
+```
 
 
 ## ⚖️ License
