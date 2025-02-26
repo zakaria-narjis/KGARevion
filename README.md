@@ -12,18 +12,16 @@ Biomedical knowledge is uniquely complex and structured, requiring distinct reas
 1⃣️ First, clone the Github repository:
 
 ```bash
-$ git clone 
+$ git clone https://github.com/mims-harvard/KGARevion
 $ cd KGARevion
 ```
 
 2⃣️ Then, set up the environment. This codebase leverages Python, Pytorch, Pytorch Geometric, etc. To create an environment with all of the required packages, please ensure that conda is installed and then execute the commands:
 
 ```bash
-$ conda env create -f 
-$ conda activate 
+$ conda env create -f KGARevion.yaml
+$ conda activate KGARevion
 ```
-3⃣️ Download Datasets
-
 
 ### 🛠️ Fine-tuning LLMs
 
