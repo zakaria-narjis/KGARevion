@@ -54,7 +54,12 @@ If you want to implement KGARevion with a new KG. You are kindly requested to fi
 ```bash
 {{"input": [head_entity, tail_entity, rel, label], "embedding_ids:" [head_entity_id, tail_entity_id, rel_id]} ... }
 ```
-such as {"input": ["TSC22D3", "HPCAL4", "protein_protein", "True"], "embedding_ids": [792, 0, 10281]}
+such as {"input": ["TSC22D3", "HPCAL4", "protein_protein", "True"], "embedding_ids": [792, 0, 10281]}. The label is in ['True', 'False'].
+
+After preparing the dataset, then you could finetune the LLM by running the following command:
+```bash
+torchrun --nproc_per_node=4 finetune_review.py
+```
 
 ## ⚖️ License
 
