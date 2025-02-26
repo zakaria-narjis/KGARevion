@@ -27,20 +27,17 @@ $ conda activate KGARevion
 After cloning the repository and installing all dependencies. Please run KGARevion by the following command:
 
 ```bash
-$ python KGARevion.py --dataset MedDDx --max_round 2 --is_revise True --llm_name llama3.1
+$ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --llm_name llama3.1
 ```
-\\ The 
+* dataset: choose one from ['mmlu', 'medqa', 'pubmedqa', 'bioasq', 'MedDDx', 'MedDDx-Basic', 'MedDDx-Intermediate', 'MedDDx-Expert', 'AfrimedQA-MCQ']
+* max_round: denotes the number of revision rounds
+* is_revise: denotes if the KGARevion contains Revision action
+* llm_name: denotes the backbone LLM of KGARevion
 
-## 🛠️ Fine-tuning LLMs
+## 🛠️ Fine-tuning LLMs in the Review action in KGARevion
 
-After cloning the repository and installing all dependencies. You can run the following command to train our model:
+In the Review action, KGARevion is implemented by the LLM which is fune-tuned on the KG completion task. To achieve that, we first get the pre-trained embedding of each entity and 
 
-
-## 🏙️ Figure 
-
-To recover each figure presented in this paper, please download the code and data at [Fig.zip(google drive)](https://drive.google.com/file/d/1sCM8xh9tdyhAU0fHUPiyVbJwQeKvBwu2/view?usp=sharing) or [Fig.zip (zenodo)](https://zenodo.org/records/11554803). You could find all code and initial data in this folder to recover each figure. By the way, some figures are painted by GraphPad, so we also uploaded the initial file of GraphPad. 
-
-You can also access these figures in this repo by clicking 'Fig' and run notebooks to get them.
 
 ## 🌟 Personalize based on your own dataset
 
