@@ -39,9 +39,16 @@ $ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --ll
 In the Review action, KGARevion is implemented by the LLM which is fune-tuned on the KG completion task. To achieve that, we first get the pre-trained embedding of each entity and 
 
 
-## 🌟 Personalize based on your own dataset
+## 🌟 Personalize based on your own QA/KG dataset
 
-If you want to benchmark KGARevion with your own QA dataset. You are kindly requested to prepare the following fil
+### QA Dataset
+
+If you want to benchmark KGARevion with your own QA dataset. You are kindly requested to prepare the json file as shown in our datasets folder. Then please benchmark KGARevion on your own QA dataset by:
+```bash
+$ python KGARevion.py --dataset [Your own dataset]
+```
+
+### KG Dataset
 
 
 ## ⚖️ License
