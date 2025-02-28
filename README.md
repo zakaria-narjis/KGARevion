@@ -36,7 +36,7 @@ $ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --ll
 
 ## 🛠️ Fine-tuning LLMs in the Review action in KGARevion
 
-In the Review action, KGARevion is implemented by the LLM which is fune-tuned on the KG completion task. To achieve that, we first get the pre-trained embedding of each entity and 
+In the Review action, KGARevion is implemented by the LLM which is fune-tuned on the KG completion task. To achieve that, we first get the pre-trained embedding of each entity and relation in PrimeKG, which is the biomedical knowledge graph we used in this work.
 
 
 ## 🌟 Personalize based on your own QA/KG dataset
