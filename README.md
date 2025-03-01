@@ -37,7 +37,13 @@ $ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --ll
 ## 🛠️ Fine-tuning LLMs in the Review action in KGARevion
 
 In the Review action, KGARevion is implemented by the LLM which is fune-tuned on the KG completion task. To achieve that, we first get the pre-trained embedding of each entity and relation in PrimeKG, which is the biomedical knowledge graph we used in this work.
-
+```bash
+$ python KGARevion.py --dataset [Your own dataset]
+```
+After that, we use LoRA to finetune LLM to make the LLM could determine the correctness of a triplet (head_entity, tail_entity, rel) by considering the embeddings. To achieve that, we finetune the LLM using 4 H100 gpus, as following:
+```bash
+torchrun --nproc_per_node=4 finetune_review.py
+```
 
 ## 🌟 Personalize based on your own QA/KG dataset
 
