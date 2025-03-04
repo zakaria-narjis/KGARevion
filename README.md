@@ -53,7 +53,7 @@ After that, we use LoRA to finetune LLM to make the LLM could determine the corr
 ```bash
 $ cd fine_tuned_model
 $ cd finetune
-$ torchrun --nproc_per_node=4 finetune_review.py
+$ torchrun --nproc_per_node=4 finetune_verification.py
 ```
 
 ## 🌟 Personalize based on your own QA/KG dataset
@@ -73,10 +73,7 @@ If you want to implement KGARevion with a new KG. You are kindly requested to fi
 ```
 such as {"input": ["TSC22D3", "HPCAL4", "protein_protein", "True"], "embedding_ids": [792, 0, 10281]}. The label is in ['True', 'False'].
 
-After preparing the dataset, then you could finetune the LLM by running the following command:
-```bash
-torchrun --nproc_per_node=4 finetune_review.py
-```
+After preparing the dataset, then please obtain the pretrained embedding and then finetune the LLM as that in the section 'Fine-tuning LLMs in the Review action in KGARevion'
 
 ## ⚖️ License
 
