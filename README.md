@@ -12,15 +12,15 @@ Biomedical knowledge is uniquely complex and structured, requiring distinct reas
 1⃣️ First, clone the Github repository:
 
 ```bash
-$ git clone https://github.com/mims-harvard/KGARevion
-$ cd KGARevion
+git clone https://github.com/mims-harvard/KGARevion
+cd KGARevion
 ```
 
 2⃣️ Then, set up the environment. To create an environment with all of the required packages, please ensure that conda is installed and then execute the commands:
 
 ```bash
-$ conda env create -f KGARevion.yaml
-$ conda activate KGARevion
+conda env create -f KGARevion.yaml
+conda activate KGARevion
 ```
 
 ## 💡 Running
@@ -30,7 +30,7 @@ After cloning the repository and installing all dependencies. To run KGARevion d
 - Second, please run KGARevion by the following command:
    
 ```bash
-$ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --llm_name llama3.1
+python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --llm_name llama3.1
 ```
 
 * dataset: choose one from ['mmlu', 'medqa', 'pubmedqa', 'bioasq', 'MedDDx', 'MedDDx-Basic', 'MedDDx-Intermediate', 'MedDDx-Expert', 'AfrimedQA-MCQ']
@@ -42,18 +42,18 @@ $ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --ll
 
 In the Review action, KGARevion is implemented by the LLM which is fune-tuned on the KG completion task. To achieve that, we first get the pre-trained embedding of each entity and relation in PrimeKG, which is the biomedical knowledge graph we used in this work.
 ```bash
-$ cd fine_tuned_model
-$ cd finetune
-$ cd pretrain_primeKG
-$ python rotate_pretraining.py
+cd fine_tuned_model
+cd finetune
+cd pretrain_primeKG
+python rotate_pretraining.py
 ```
 By using this, to achieve the pretrain embedding of each entity and relationship in KGs.
 
 After that, we use LoRA to finetune LLM to make the LLM could determine the correctness of a triplet (head_entity, tail_entity, rel) by considering the embeddings. To achieve that, we finetune the LLM using 4 H100 gpus, as following:
 ```bash
-$ cd fine_tuned_model
-$ cd finetune
-$ torchrun --nproc_per_node=4 finetune_verification.py
+cd fine_tuned_model
+cd finetune
+torchrun --nproc_per_node=4 finetune_verification.py
 ```
 
 ## 🌟 Personalize based on your own QA/KG dataset
@@ -62,7 +62,7 @@ $ torchrun --nproc_per_node=4 finetune_verification.py
 
 If you want to benchmark KGARevion on your own QA dataset. You are kindly requested to prepare the json file as shown in our datasets folder. Then please benchmark KGARevion on your own QA dataset by:
 ```bash
-$ python KGARevion.py --dataset [Your own dataset]
+python KGARevion.py --dataset [Your own dataset]
 ```
 
 ### KG Dataset
@@ -76,16 +76,16 @@ such as {"input": ["TSC22D3", "HPCAL4", "protein_protein", "True"], "embedding_i
 After preparing the dataset,
 - First, please obtain the pretrained embedding by running:
 ```bash
-$ cd fine_tuned_model
-$ cd finetune
-$ cd pretrain_primeKG
-$ python rotate_pretraining.py
+cd fine_tuned_model
+cd finetune
+cd pretrain_primeKG
+python rotate_pretraining.py
 ```
 - Second, please finetune the LLM with the obtained pretrained embeddings and the new KG:
 ```bash
-$ cd fine_tuned_model
-$ cd finetune
-$ torchrun --nproc_per_node=4 finetune_verification.py
+cd fine_tuned_model
+cd finetune
+torchrun --nproc_per_node=4 finetune_verification.py
 ```
 
 ## Citation
