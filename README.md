@@ -26,7 +26,7 @@ conda activate KGARevion
 ## 💡 Running
 
 After cloning the repository and installing all dependencies. To run KGARevion directly:
-- First, please download the finetuned checkpoints which is available at , to 'fine_tuned_model' folder.
+- First, please download the finetuned checkpoints (files denoted by *finetuned model*, including *adapter_config.bin*, *adapter_model.bin*, *embeddings.pth*, *lm_to_kg.pth*) which is available at [https://doi.org/10.7910/DVN/T2HTGK], to 'fine_tuned_model' folder.
 - Second, please run KGARevion by the following command:
    
 ```bash
@@ -55,7 +55,7 @@ cd fine_tuned_model
 cd finetune
 torchrun --nproc_per_node=4 finetune_verification.py
 ```
-
+The training data (*PrimeKG-train.json*) for finetuning the LLM is avaliable at [https://doi.org/10.7910/DVN/T2HTGK].
 ## 🌟 Personalize based on your own QA/KG dataset
 
 ### QA Dataset
