@@ -89,7 +89,13 @@ $ torchrun --nproc_per_node=4 finetune_verification.py
 ```
 
 ## Citation
-
-
+```bash
+@article{su2025knowledge,
+  title={Knowledge Graph Based Agent for Complex, Knowledge-Intensive QA in Medicine},
+  author={Su, Xiaorui and Wang, Yibo and Gao, Shanghua and Liu, Xiaolong and Giunchiglia, Valentina and Clevert, Djork-Arn{\'e} and Zitnik, Marinka},
+  journal={International Conference on Learning Representations, ICLR},
+  year={2025}
+}
+```
 </details>
 
