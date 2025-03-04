@@ -22,13 +22,17 @@ $ cd KGARevion
 $ conda env create -f KGARevion.yaml
 $ conda activate KGARevion
 ```
+
 ## 💡 Running
 
-After cloning the repository and installing all dependencies. Please run KGARevion by the following command:
-
+After cloning the repository and installing all dependencies. To run KGARevion directly:
+- First, please download the finetuned checkpoints which is available at , to 'fine_tuned_model' folder.
+- Second, please run KGARevion by the following command:
+   
 ```bash
 $ python KGARevion.py --dataset MedDDx-Basic --max_round 2 --is_revise True --llm_name llama3.1
 ```
+
 * dataset: choose one from ['mmlu', 'medqa', 'pubmedqa', 'bioasq', 'MedDDx', 'MedDDx-Basic', 'MedDDx-Intermediate', 'MedDDx-Expert', 'AfrimedQA-MCQ']
 * max_round: denotes the number of revision rounds
 * is_revise: denotes if the KGARevion contains Revision action
