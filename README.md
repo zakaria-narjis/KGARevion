@@ -73,11 +73,23 @@ If you want to implement KGARevion with a new KG. You are kindly requested to fi
 ```
 such as {"input": ["TSC22D3", "HPCAL4", "protein_protein", "True"], "embedding_ids": [792, 0, 10281]}. The label is in ['True', 'False'].
 
-After preparing the dataset, then please obtain the pretrained embedding and then finetune the LLM as that in the section 'Fine-tuning LLMs in the Review action in KGARevion'
+After preparing the dataset,
+- First, please obtain the pretrained embedding by running:
+```bash
+$ cd fine_tuned_model
+$ cd finetune
+$ cd pretrain_primeKG
+$ python rotate_pretraining.py
+```
+- Second, please finetune the LLM with the obtained pretrained embeddings and the new KG:
+```bash
+$ cd fine_tuned_model
+$ cd finetune
+$ torchrun --nproc_per_node=4 finetune_verification.py
+```
 
-## ⚖️ License
+## Citation
 
-The code in this package is licensed under the MIT License.
 
 </details>
 
