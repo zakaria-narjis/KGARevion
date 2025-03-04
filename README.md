@@ -1,5 +1,5 @@
 <h1 align="center">
-  KGARevion: Knowledge Graph Based Agent for Complex, Knowledge-Intensive QA in Medicine
+  KGARevion: An AI Agent for Knowledge-Intensive Biomedical QA
 </h1>
 
 ## 👀 Overview of KGARevion
