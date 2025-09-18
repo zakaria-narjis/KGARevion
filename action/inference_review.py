@@ -74,7 +74,14 @@ class ReviewInfer(object):
         return umls_to_ddb
     
     def load_model(self, model, model_weights):
-        model = PeftModel.from_pretrained(model, model_weights).cuda()
+        # model = PeftModel.from_pretrained(model, model_weights).to("cuda:0")
+        model = PeftModel.from_pretrained(
+            model, 
+            model_weights,
+            device_map="auto",
+            offload_folder="./offload_dir"  # create a folder for offloaded weights
+        )
+
         model.config.pad_token_id = self.tokenizer.eos_token_id 
         model = model.eval()
 
@@ -231,13 +238,13 @@ class ReviewInfer(object):
         prompt = prompt.format(full_prompt)
         tokenized_full_prompt = self.tokenizer(prompt, return_tensors='pt')
 
-        input_ids = tokenized_full_prompt['input_ids'].cuda()
+        input_ids = tokenized_full_prompt['input_ids'].to("cuda:0")
 
         token_embeds = self.model.model.model.embed_tokens(input_ids)
         input_embeds = torch.cat((kg_lm_emb, token_embeds), dim=1)
         batch_size, seq_len, _ = kg_lm_emb.shape[:3]
         prefix_mask = torch.ones((batch_size, seq_len))
-        new_attention_mask = torch.cat((prefix_mask.cuda(), tokenized_full_prompt['attention_mask'].cuda()), dim=-1)
+        new_attention_mask = torch.cat((prefix_mask.to("cuda:0"), tokenized_full_prompt['attention_mask'].to("cuda:0")), dim=-1)
         
         token_logit = self.model(inputs_embeds = input_embeds, attention_mask = new_attention_mask).logits
         true_logit = token_logit[:, -1, 2575]

@@ -20,7 +20,7 @@ class Review(object):
         if self.is_revise == True: 
             self.revise = Revise(self.llm)
         self.max_round = args.max_round
-        self.triple_generator = TripletExtraction(llm=self.llm, args=args, model_name=args.llm_name, device='cuda')
+        self.triple_generator = TripletExtraction(llm=self.llm, args=args, model_name=args.llm_name, device='cuda:0')
     
     def check_triplets(self, keys_text):
         match = keys_text.replace('[', '').replace(']', '').replace('\'', '')
