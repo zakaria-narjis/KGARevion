@@ -7,7 +7,7 @@ import logging
 from src.utils import QADataset, MedDDxLoader, BaseLLM, AfrimedLoader
 from action.generate import Generate
 from action.review import Review
-from action.answer import Answer, AnswerOpen
+from action.answer import Answer
 
 set_seed(42)
 

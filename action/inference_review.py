@@ -10,7 +10,8 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM, set_seed
 import difflib
 from transformers import AutoTokenizer, AutoModel, AutoConfig
-from transformers.modeling_utils import SequenceSummary
+# from transformers.modeling_utils import SequenceSummary
+from transformers.modeling_outputs import SequenceClassifierOutput as SequenceSummary
 from sklearn.metrics.pairwise import cosine_similarity
 from src.prompter import Prompter
 from src.descriptionTemplate import DescriptionTemplate

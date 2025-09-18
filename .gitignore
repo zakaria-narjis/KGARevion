@@ -1,0 +1,30 @@
+#ignore pycache files
+__pycache__/
+*.py[cod]
+*$py.class
+#ignore virtual environment folder
+venv/
+env/
+.venv/
+#ignore IDE specific files
+.vscode/
+.idea/
+#ignore system files
+.DS_Store
+Thumbs.db
+#ignore log files
+*.log
+#ignore compiled files
+*.so
+*.dll
+*.dylib
+#ignore package distribution files
+dist/
+build/
+*.egg-info/
+#ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+#ignore coverage reports
+htmlcov/
+#ignore any .pth files
+*.pth

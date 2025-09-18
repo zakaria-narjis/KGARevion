@@ -1,0 +1,38 @@
+# PyTorch (latest 2.x)
+torch>=2.3.0
+torchvision
+torchaudio
+
+# PyTorch Geometric (after installing torch)
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+torch-geometric
+-f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+
+
+# NLP / LLM
+transformers
+sentence-transformers
+deepspeed
+spacy
+scispacy
+fastapi
+uvicorn
+gradio
+langchain
+cohere
+openai
+vllm
+datasets
+huggingface-hub
+tqdm
+requests
+pillow
+einops
+orjson
+peft
+
+# scispaCy model (special URL)
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz
