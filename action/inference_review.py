@@ -10,8 +10,8 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM, set_seed
 import difflib
 from transformers import AutoTokenizer, AutoModel, AutoConfig
-# from transformers.modeling_utils import SequenceSummary
-from transformers.modeling_outputs import SequenceClassifierOutput as SequenceSummary
+from transformers.modeling_utils import SequenceSummary
+# from transformers.modeling_outputs import SequenceClassifierOutput as SequenceSummary
 from sklearn.metrics.pairwise import cosine_similarity
 from src.prompter import Prompter
 from src.descriptionTemplate import DescriptionTemplate
@@ -55,8 +55,8 @@ class ReviewInfer(object):
         self.umls_to_ddb = self.read_primekg_umls()
         embedding_path = model_weights + "embeddings.pth"
         lm_to_kg_path = model_weights + "lm_to_kg.pth"
-        self.kg_embeddings = torch.load(embedding_path, map_location='cuda:0')
-        self.lm_to_kg = torch.load(lm_to_kg_path, map_location='cuda:0')
+        self.kg_embeddings = torch.load(embedding_path, map_location='cuda:0', weights_only=False)
+        self.lm_to_kg = torch.load(lm_to_kg_path, map_location='cuda:0', weights_only=False)
         self.prompter = Prompter("alpaca")
         self.descriptionTemp = DescriptionTemplate()
         

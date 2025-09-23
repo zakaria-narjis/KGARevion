@@ -13,8 +13,8 @@ torch-geometric
 
 
 # NLP / LLM
-transformers
-sentence-transformers
+transformers==4.49.0
+sentence-transformers==3.0.1
 deepspeed
 spacy
 scispacy
@@ -32,7 +32,8 @@ requests
 pillow
 einops
 orjson
-peft
+peft==0.3.0
+rouge-score
 
 # scispaCy model (special URL)
 https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz
