@@ -33,7 +33,7 @@ class KGARevion(object):
     def call(self, query):
         logging.info(query)
         print("query")
-        generated_triplets, mt = self.triplets_generator.call(query)
+        generated_triplets = self.triplets_generator.call(query)
         print(generated_triplets)
         filtered_triplets, score = self.classifier.call(generated_triplets, query)
         answer = self.answer_generator.call(filtered_triplets, query)
