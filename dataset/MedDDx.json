@@ -1,4 +1,1 @@
-[{
-    "query": "Could you help me find a gene or protein associated with pediatric hepatocellular carcinoma that is involved in miRNA-mediated gene silencing and also inhibits PPARgamma expression?\nA: MIR6165\nB: MIR614\nC: MIR616\nD: MIR615\n", 
-    "answer": "D", 
-    "sim_level_std": 0.008824973884991814}]
+[{"query": "Which genes or proteins are expressed exclusively in the pericardium and not in either the dorsal or ventral regions of the thalamus?\nA: ADH1A\nB: ADH1C\nC: ADH4\nD: ADH1B\n", "answer": "D", "sim_level_std": 0.01367599192570407}, {"query": "Could you suggest any medications effective for treating beriberi that are safe to use with Zopiclone?\nA: Niacinamide ascorbate\nB: N-(4-phenoxyphenyl)-2-[(pyridin-4-ylmethyl)amino]nicotinamide\nC: N-methylnicotinamide\nD: Nicotinamide\n", "answer": "D", "sim_level_std": 0.03887837340354355}]
