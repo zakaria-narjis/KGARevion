@@ -1,0 +1,4 @@
+[{
+    "query": "Could you help me find a gene or protein associated with pediatric hepatocellular carcinoma that is involved in miRNA-mediated gene silencing and also inhibits PPARgamma expression?\nA: MIR6165\nB: MIR614\nC: MIR616\nD: MIR615\n", 
+    "answer": "D", 
+    "sim_level_std": 0.008824973884991814}]
